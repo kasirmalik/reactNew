@@ -1,0 +1,33 @@
+.input-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .input-box > input {
+    height: 50px;
+    width: 50px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .timer-button{
+    height: 35px;
+    width: 100px;
+    border: none;
+    outline: none;
+    background-color: purple;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 80px;
+  }
+  .timer-box{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 100px;
+    
+  }

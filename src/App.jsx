@@ -3,6 +3,7 @@ import Faq from './component/Faq/faq'
 import Countdown from './component/CountdownTimer/Countdown'
 import EmiCalculator from './component/EmiCalculator/EmiCalculator'
 import Card from './component/ModalCard/Card'
+import Counter from './component/UndoableCounter/Counter'
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       {/* <EmiCalculator/> */}
       {/* <Countdown/> */}
       {/* <Faq/> */}
-      <Card></Card>
+      {/* <Card></Card> */}
+      <Counter/>
     </div>
   )
 }

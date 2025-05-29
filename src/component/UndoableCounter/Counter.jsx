@@ -3,10 +3,26 @@ import "./counter.css"
 
 function Counter() {
     const [value, setValue] = useState(0);
+    const [history, sethistory] = useState([]);
+    const maintainHistory = (key,prev,curr)=>{
+        // This function will maintain the history of actions
+        // You can implement a stack or an array to keep track of the history
+        // For simplicity, we will just log the action here
+        console.log("Action maintained in history", value, "Key:", key, "Previous Value:", prev, "Current Value:", curr);
+        const obj = {
+          action: key,
+          prev,
+          curr
+        }
+        const copyHistory = [...history];
+        copyHistory.unshift(obj);
+        sethistory(copyHistory);
+    }
     const handleClick = (key) => {
-        const value = parseInt(key);
+        const val = parseInt(key);
+        maintainHistory(key,value,val + value);
         console.log(key);
-        setValue((existingValue) => existingValue + value);
+        setValue((existingValue) => existingValue + val);
     }
   return (
     <div>
@@ -33,7 +49,17 @@ function Counter() {
         })}
       </div>
       <div className="history">
-        history coming
+        <h3>history</h3>
+        
+       {history.map((item, index) => {
+          return (
+            <div key={index} className="history-item">
+              <span>Action: {item.action}</span>:
+              <span>Prev Value: {item.prev}</span>
+              <span>Curr Value: {item.curr}</span>
+            </div>
+          )
+        })}
       </div>
     </div>
   )

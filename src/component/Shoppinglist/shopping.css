@@ -1,0 +1,10 @@
+.shop{
+    text-align: center;
+}
+.input{
+    width: 230px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+}

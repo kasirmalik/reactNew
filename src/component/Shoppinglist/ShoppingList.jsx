@@ -7,10 +7,16 @@ function ShoppingList() {
     console.log(e.target.value);
     setfood(e.target.value);
   };
-  useEffect(() => {
+  const fetchItems = (food)=>{
+    const url = `https://api.example.com/items?query=${food}`;
     
+  }
+  useEffect(() => {
+    if (food.length >= 2) {
+      //
+    }
   
-  }, []);
+  }, [food]);
 
   return (
     <div className="shop">

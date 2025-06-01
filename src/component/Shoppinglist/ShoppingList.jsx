@@ -7,13 +7,17 @@ function ShoppingList() {
     console.log(e.target.value);
     setfood(e.target.value);
   };
-  const fetchItems = (food)=>{
-    const url = `https://api.example.com/items?query=${food}`;
+  const fetchItems = async(food)=>{
+    const url = `https://api.frontendeval.com/fake/food/${food}`;
+    const result = await fetch(url);
+    const data = await result.json();
+    console.log(data);
     
   }
   useEffect(() => {
     if (food.length >= 2) {
-      //
+      // Call the fetchItems function when food length is 2 or more
+      fetchItems(food);
     }
   
   }, [food]);
